@@ -88,5 +88,10 @@ Route::get('/create-admin', function () {
     ]);
     return "Admin created!";
 });
-
+Route::get('/clear-all', function() {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    return "All cache cleared!";
+});
 
