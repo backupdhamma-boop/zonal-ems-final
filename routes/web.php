@@ -88,3 +88,4 @@ Route::get('/create-admin', function () {
     ]);
     return "Admin created!";
 });
+
