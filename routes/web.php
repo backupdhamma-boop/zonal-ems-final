@@ -73,3 +73,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/migrate-db', function () {
+    \Artisan::call('migrate --force');
+    return "Database migration successful!";
+});
