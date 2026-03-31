@@ -78,3 +78,13 @@ Route::get('/migrate-db', function () {
     \Artisan::call('migrate --force');
     return "Database migration successful!";
 });
+
+Route::get('/create-admin', function () {
+    \App\Models\User::create([
+        'name' => 'Admin',
+        'email' => 'admin@admin.com',
+        'password' => bcrypt('password123'),
+        'role' => 'admin'
+    ]);
+    return "Admin created!";
+});
