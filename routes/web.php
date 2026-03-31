@@ -1,4 +1,13 @@
+
 <?php
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/clear-all', function() {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    return "Cache Cleared!";
+});
 
 use App\Models\Leave;
 use App\Models\Holiday;
